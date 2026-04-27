@@ -1,12 +1,20 @@
 // Fonts
-$font-family-body = "Menlo", "Meslo LG", monospace
-$font-family-mono = "Menlo", "Meslo LG", monospace
-$font-size = 14px
+$font-family-body = "Fira Code", 'Noto Sans SC', sans-serif, monospace
+
+// Keep vendor list explicit for Stylus runtime compatibility.
+vendors = moz webkit o ms official
+
+$font-family-mono = "Fira Code", 'Noto Sans SC', sans-serif, monospace
+$font-family-tt = "Inconsolata", monospace
+$font-size = 16px
 $line-height = 1.725
 $page-width = 0rem + (hexo-config("page_width") || 39)
 // Logo
 $logo-width = 0px + (hexo-config("logo.width") || 0)
 $logo-height = 0px + (hexo-config("logo.height") || 0)
-$logo-grayout = hexo-config("logo.grayout") || false
 // Colors
-$colors = hexo-config("colorscheme") || "dark"
+$colors = hexo-config("colorscheme")
+
+$link-underline-duration = unquote(hexo-config("theme_config.link_underline.duration") || hexo-config("link_underline.duration") || "0.28s")
+$link-underline-thickness = 0px + (hexo-config("theme_config.link_underline.thickness") || hexo-config("link_underline.thickness") || 2)
+$link-underline-offset = unquote(hexo-config("theme_config.link_underline.offset") || hexo-config("link_underline.offset") || "-1px")

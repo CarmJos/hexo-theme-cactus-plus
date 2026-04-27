@@ -7,8 +7,6 @@
 # page within your website.
 projects_url: http://github.com/probberechts
 
-# Set the page direction to RTL or LTR. default is LTR. (if you set it 'rtl', the 'vazir' font will be loaded.)
-direction: ltr
 # Configure the navigation menu.
 # A pair 'Key: url' will result in a link to 'url' with the name 'Key' in the
 # navigation menu. Optionally, you can add translations for the 'Key' in
@@ -58,7 +56,7 @@ tags_overview: false
 #   - post_count: whether to show only the x most recent posts.
 #   - sort_updated: sort posts by last modification date instead of creation date.
 posts_overview:
-  show_all_posts: false
+  show_all_posts: true
   post_count: 5
   sort_updated: false
 
@@ -79,17 +77,8 @@ post:
 # Customize the copyright years
 # Note: if start_year/end_year not provided, will use current year.
 copyright:
-  start_year: 2016
+  start_year: 2017
   end_year:
-
-# Customize the 404 page
-# Options:
-#   - enabled: whether to enable the 404 page (404.html).
-error_404:
-  enabled: true
-  title: "404 Page Not Found"
-  description: "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
-
 
 ##############################################################################
 # Look and Feel
@@ -109,7 +98,14 @@ logo:
   height: 50
   url: /images/logo.png
   gravatar: false
-  grayout: true
+  grayout: false
+
+# Post content link underline animation options.
+link_underline:
+  duration: 0.28s
+  thickness: 2
+  # Controls distance from text baseline (e.g. -1px, 0px, 1px).
+  offset: 2px
 
 # Customize the favicons.
 # Cactus supports a limited set of the three most important icons:
@@ -133,7 +129,7 @@ favicon:
 
 # The color scheme that should be used to highlight codeblocks.
 # See source/css/_highlight for a list of all available color schemes.
-# highlight: rainbow
+highlight: "hybrid"
 
 # Set the color scheme.
 # Available color schemes are 'dark', 'light', 'classic' and 'white'.
@@ -149,7 +145,7 @@ page_width: 48
 ##############################################################################
 
 # Enable or disable the RSS feed.
-rss: false
+rss: true
 
 # Turn your web pages into graph objects (see http://ogp.me).
 open_graph:
@@ -165,7 +161,7 @@ open_graph:
 
 # Enable MathJax support for Latex
 mathjax:
-  enabled: false
+  enabled: true
 
 # Fill in your Disqus Comments Shortname to enable Disqus comments.
 disqus:
@@ -209,11 +205,30 @@ gravatar:
   email: name@email.com
   hash: d41d8cd98f00b204e9800998ecf8427e
 
-# loads libraries and styles from CDN instead or relying on local files
-cdn:
-  enable: true
-  jquery: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js
-  clipboard: https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js
-  font_awesome: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
-  justified_gallery_css: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css
-  justified_gallery_js: https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
+# valine评论
+# - appId/appKey: 从LeanCloud的应用中得到的appId/appKey.
+# - avatar: Gravatar 头像展示方式
+# - placeholder: 评论框占位提示符
+# - guest_info: 评论者相关属性 不建议修改
+# - pageSize: 评论列表分页，每页条数
+# - visitor: 文章访问量统计
+# - lang: 多语言支持 (zh-cn / en)
+# - push: 有新评论通知推送 (sc | qmsg | 空)  sc:server酱  qmsg:Qmsg酱;
+# - pushLink: 推送目标完整地址 例:https://sc.ftqq.com/SCUxxxxxx.send | https://qmsg.zendee.cn:443/send/xxx
+# https://valine.js.org/
+valine:
+  enabled: false
+  appId:
+  appKey:
+  avatar: mp
+  placeholder: Just go go
+  guest_info: nick,mail,link
+  pageSize: 15
+  visitor: true
+  lang: zh-cn
+  pushType:
+  pushLink:
+
+##############################################################################
+# 底部配置项
+##############################################################################
